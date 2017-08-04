@@ -5,8 +5,8 @@ iptables -F OUTPUT
 iptables -F FORWARD
 
 iptables -P INPUT DROP
-iptables -P OUTPUT DROP
-iptables -P FORWARD DROP
+iptables -P OUTPUT ACCEPT
+iptables -P FORWARD ACCEPT
 
 iptables -A INPUT -i lo -j ACCEPT
 iptables -A INPUT -m state --state ESTABLISHED -j ACCEPT
@@ -18,8 +18,8 @@ ip6tables -F OUTPUT
 ip6tables -F FORWARD
 
 ip6tables -P INPUT DROP
-ip6tables -P OUTPUT DROP
-ip6tables -P FORWARD DROP
+ip6tables -P OUTPUT ACCEPT
+ip6tables -P FORWARD ACCEPT
 
 ip6tables -A INPUT -i lo -j ACCEPT
 ip6tables -A INPUT -m state --state ESTABLISHED -j ACCEPT
